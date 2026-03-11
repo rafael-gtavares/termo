@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+:root {
+    --cor-principal: #fff;
+    --cor-fundo: #6e5c62;
+    --cor-fundo-unidade: #615458;
+
+    --fonte-principal: "Fredoka", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--cor-principal);
+    background-color: var(--cor-fundo);
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    margin: 5%;
+}
+
+.container__titulo {
+    font-size: 3rem;
+}
+
+.tabuleiro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    margin-top: 2em;
+}
+
+.linha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.unidade {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    background-color: var(--cor-fundo-unidade);
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.correct {
+    background-color: #3aa394;
+    color: white;
+}
+
+.present {
+    background-color: #d3ad69;
+    color: white;
+}
+
+.absent {
+    background-color: #312a2c;
+    color: white;
+}
+
+#container-notificacoes {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notificacao {
+    background: #312a2c;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-family: var(--fonte-principal);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: opacity 1s ease, transform 0.3s ease;
+    font-weight: 500;
+    min-width: 200px;
+    text-align: center;
+}
+
+.notificacao.erro {
+    background: #e74c3c;
+    border-left: 8px solid #c0392b;
+    font-size: 1.3rem;
+    padding: 25px 40px;
+    font-weight: 700;
+}
+
+.notificacao.sucesso {
+    background: #2ecc71;
+    border-left: 8px solid #27ae60;
+    font-size: 1.3rem;
+    padding: 25px 40px;
+    font-weight: 700;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+
+
+.unidade-foco {
+    border: 7px solid white !important; 
+    transition: border-color 0.1s ease, border-width 0.1s ease;
+}
+
+.linha-ativa {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 2px 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        max-width: 100%;
+    }
+
+    .unidade {
+        width: 60px;
+        height: 60px;
+    }
+}
