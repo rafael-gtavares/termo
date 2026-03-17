@@ -8,7 +8,7 @@ O objetivo deste projeto foi elevar a base técnica fornecida em aula, aplicando
 
 O projeto pode ser acessado online através do link abaixo:
 
-> **Link do Projeto:** [CLIQUE AQUI PARA ACESSAR]((https://rafael-gtavares.github.io/termo/))
+> **Link do Projeto:** https://rafael-gtavares.github.io/termo/
 
 ---
 
