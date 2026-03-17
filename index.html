@@ -5,17 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Termo</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
 </head>
 
 <body>
     <div id="container-notificacoes"></div>
-    
+
+    <div id="overlay-inicio" class="modal-overlay">
+        <div class="modal-conteudo menu-inicial">
+            <h1>Termo</h1>
+            <p>Escolha o tempo por tentativa:</p>
+            
+            <div class="opcoes-tempo">
+                <input type="radio" name="tempo" id="t15" value="15" checked>
+                <label for="t15">15s</label>
+
+                <input type="radio" name="tempo" id="t30" value="30">
+                <label for="t30">30s</label>
+
+                <input type="radio" name="tempo" id="t60" value="60">
+                <label for="t60">60s</label>
+            </div>
+
+            <button id="btn-comecar" class="btn-principal">COMEÇAR JOGO</button>
+            <p class="dica">Use as setas para navegar e Enter para confirmar.</p>
+        </div>
+    </div>
+
+    <div id="modal-ajuda" class="modal-overlay" style="display: none;">
+        <div class="modal-conteudo">
+            <button id="fechar-modal" class="btn-fechar">&times;</button>
+            <h2>Como Jogar</h2>
+            <p>Adivinhe a palavra em 6 tentativas.</p>
+            <hr>
+            <div class="exemplo">
+                <div class="linha">
+                    <div class="unidade correct">T</div>
+                    <div class="unidade">E</div>
+                    <div class="unidade">R</div>
+                    <div class="unidade">M</div>
+                    <div class="unidade">O</div>
+                </div>
+                <p>A letra <strong>T</strong> faz parte da palavra e está no lugar certo.</p>
+            </div>
+            <div class="exemplo">
+                <div class="linha">
+                    <div class="unidade">V</div>
+                    <div class="unidade">I</div>
+                    <div class="unidade present">O</div>
+                    <div class="unidade">L</div>
+                    <div class="unidade">A</div>
+                </div>
+                <p>A letra <strong>O</strong> faz parte da palavra, mas em outra posição.</p>
+            </div>
+            <div class="exemplo">
+                <div class="linha">
+                    <div class="unidade">P</div>
+                    <div class="unidade">U</div>
+                    <div class="unidade">L</div>
+                    <div class="unidade">S</div>
+                    <div class="unidade absent">O</div>
+                </div>
+                <p>A letra <strong>O</strong> não faz parte da palavra em nenhum ponto.</p>
+            </div>
+        </div>
+    </div>
+
     <main class="container">
-        <h1 class="container__titulo">TERMO</h1>
-    </main>    
+        <header class="header">
+            <div class="header-topo">
+                <h1 class="container__titulo">Termo</h1>
+                <div class="controles-topo">
+                    <button id="btn-reiniciar" class="btn-circular" title="Reiniciar" style="display: none;">&#8635;</button>
+                    <button id="btn-ajuda" class="btn-circular">?</button>
+                </div>
+            </div>
 
-    <script src="./script.js"></script>
+            <div id="container-timer" class="container-timer">
+                <div id="barra-timer" class="barra-timer"></div>
+            </div>
+        </header>
+
+        </main>
+
+    <script src="./scripts/script.js"></script>
 </body>
-
 </html>
