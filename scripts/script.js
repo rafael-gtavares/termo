@@ -102,16 +102,26 @@ function criarTeclado() {
 
 function destacarLinhaUnidade() {
     document.querySelectorAll('.unidade').forEach(u => {
-        u.classList.remove('linha-active', 'linha-ativa', 'unidade-foco'); // Suportando ambas classes se houver variação
+        u.classList.remove('linha-ativa', 'unidade-foco');
     });
 
-    const linhas = document.querySelectorAll('.linha');
-    const linhaFoco = linhas[linhaAtual];
+    //Para continuar destacando mesmo após digitar a palavra toda
+    let colunaBusca = Math.min(colunaAtual, QTD_COLUNA - 1);
+    const itemReferencia = document.getElementById(`${linhaAtual}-${colunaBusca}`);
+    
+    if (itemReferencia && !endGame) {
+        const linhaPai = itemReferencia.parentElement;
 
-    if (linhaFoco && !endGame) {
-        linhaFoco.querySelectorAll('.unidade').forEach(u => u.classList.add('linha-ativa'));
-        const itemAtivo = document.getElementById(`${linhaAtual}-${colunaAtual}`);
-        if (itemAtivo) itemAtivo.classList.add('unidade-foco');
+        if (linhaPai) {
+            linhaPai.querySelectorAll('.unidade').forEach(u => {
+                u.classList.add('linha-ativa');
+            });
+        }
+
+        const itemFoco = document.getElementById(`${linhaAtual}-${colunaAtual}`);
+        if (itemFoco) {
+            itemFoco.classList.add('unidade-foco');
+        }
     }
 }
 
