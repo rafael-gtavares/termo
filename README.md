@@ -1,4 +1,4 @@
-# 🧩 Termo Clone - Custom Edition
+# 🧩 Termo Clone
 
 Este projeto é uma versão aprimorada e altamente customizada do jogo **Termo**, desenvolvida como parte da disciplina de **Tópicos Especiais em Programação**, ministrada pelo professor **Lucas Oliveira**.
 
